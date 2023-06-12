@@ -62,9 +62,9 @@ const App = () => {
     dispatch(setSort(e.target.value));
   };
 
-  const onReset = () => {
-    setSort("");
-    setSearch("");
+  const onReset = (e) => {
+    dispatch(setSearch(e.target.value));
+    dispatch(setSort(e.target.value));
   };
 
   // Below is the return once data has loaded
@@ -103,8 +103,6 @@ const App = () => {
       </div>
       <Simpsons
         simpsons={filteredList}
-        // onLikeToggle={onLikeToggle}
-        // onDelete={onDelete}
         onSearchInput={onSearchInput}
         onSortInput={onSortInput}
         onReset={onReset}
